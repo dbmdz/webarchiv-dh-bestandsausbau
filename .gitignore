@@ -1,0 +1,6 @@
+**/__pycache__
+.idea
+*.iml
+**/aut
+**/aut-*.zip
+**/.ipynb_checkpoints

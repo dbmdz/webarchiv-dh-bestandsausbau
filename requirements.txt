@@ -1,0 +1,7 @@
+requests==2.25.1
+jupyter==1.0.0
+pysolr==3.9.0
+click==8.0.1
+jsonlines==2.0.0
+sentence_transformers==1.2.0
+pyvespa==0.7.0

@@ -1,0 +1,57 @@
+schema linkcontext {
+    document linkcontext {
+        field id type string {
+            indexing: attribute | summary
+        }
+        field url type string {
+            indexing: summary
+        }
+        field domain type string {
+             indexing: attribute | summary
+        }
+        field src_annotations type array<string> {
+            indexing: attribute | summary
+        }
+        field context type string {
+            indexing: index | summary
+        }
+        field context_bert type tensor<float>(x[512]) {
+            indexing: attribute | index
+            attribute {
+                distance-metric: angular
+            }
+            index {
+                hnsw {
+                  max-links-per-node: 24
+                  neighbors-to-explore-at-insert: 500
+                }
+            }
+	    }
+	    field inv_path_depth type float {
+	        indexing: attribute
+	    }
+	    field active type bool {
+	        indexing: attribute
+	    }
+    }
+
+    document-summary minimal {
+        summary id type string {  }
+    }
+
+    fieldset default {
+        fields: url, context
+    }
+
+    rank-profile default {
+        first-phase {
+            expression: nativeRank(context)
+        }
+    }
+
+    rank-profile bert_context {
+        first-phase {
+              expression: closeness(field, context_bert)
+         }
+    }
+}

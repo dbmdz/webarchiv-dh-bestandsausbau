@@ -1,0 +1,12 @@
+http
+https
+
+de
+org
+com
+nl
+uk
+
+www
+
+

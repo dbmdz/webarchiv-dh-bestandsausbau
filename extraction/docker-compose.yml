@@ -1,0 +1,7 @@
+version: '3'
+services:
+  linkcontext_extraction:
+    build: .
+    volumes:
+      - /path/to/warcs:/in:ro
+      - /path/to/store/results:/out:rw

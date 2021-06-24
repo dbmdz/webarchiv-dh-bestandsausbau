@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+  solr:
+    image: solr:8.5.2
+    ports:
+      - "8988:8983"
+    volumes:
+      - .:/opt/solr/server/solr/configsets/myconfig:ro
+    command:
+      - solr-precreate
+      - link-index
+      - /opt/solr/server/solr/configsets/myconfig
