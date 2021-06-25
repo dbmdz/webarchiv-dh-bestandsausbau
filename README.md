@@ -63,7 +63,7 @@ Starte den vespa Docker Container:
 ```shell
 docker run -m 8G --detach --name vespa-linkcontext --hostname vespa-linkcontext \
     --publish 8080:8080 --publish 19112:19112 --publish 19071:19071 \
-    vespaengine/vespa
+    vespaengine/vespa:7.405.22
 ```
 Installiere die vespa Anwendung, die für die Linkkontextsuche konfiguriert wurde:
 ```shell
@@ -75,7 +75,7 @@ localhost:19071/application/v2/tenant/default/prepareandactivate
 Lade das Indexierungswerkzeug herunter, das von vespa bereit gestellt wird:
 ```shell
 curl -L -o vespa-http-client-jar-with-dependencies.jar \
-https://search.maven.org/classic/remotecontent?filepath=com/yahoo/vespa/vespa-http-client/7.391.28/vespa-http-client-7.391.28-jar-with-dependencies.jar
+https://search.maven.org/classic/remotecontent?filepath=com/yahoo/vespa/vespa-http-client/7.405.22/vespa-http-client-7.405.22-jar-with-dependencies.jar
 ```
 Indexiere die Daten
 ```shell
