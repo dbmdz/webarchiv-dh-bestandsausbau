@@ -84,3 +84,7 @@ java -jar vespa-http-client-jar-with-dependencies.jar \
 ```
 Als Interface für die Textähnlichkeitssuche mit dem neu angelegten Index kann das Jupyter Notebook
 `semantic_search.ipynb` im Ordner `notebooks` in diesem Repository genutzt werden.
+
+# Lizenz
+Der Quellcode in diesem Projekt ist unter der [MIT-Lizenz](https://github.com/github/choosealicense.com/blob/gh-pages/LICENSE.md) lizenziert.
+Das bereitgestellte Beispieldatenset ist urheberrechtlich geschützt, siehe [In Copyright](http://rightsstatements.org/vocab/InC/1.0/).
