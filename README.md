@@ -3,12 +3,12 @@ Der Ausbau von Webarchivsammlungen soll unterstützt werden, indem aus den gesam
 Webarchiven zunächst die ausgehenden Links extrahiert und anschließend ihre thematische Relevanz für die Sammlung bewertet. 
 Neben der Ziel-URL und -domain werden für jeden Link auch der Ankertext und Linkkontext extrahiert und für die Suche aufbereitet. 
 Linkkontext bezeichnet hier den Textinhalt des Elternelements, in das der Linktag eingebettet ist.
-Die extrahierten Linkdaten werden zusätzlich mit Metadaten aus dem OPAC angereichert, mit denen Bibliothekar\*innen
-Nach der Indexierung der Linkkontexte können Bibliothekar*innen gezielt nach Links auf Webinhalte zu bestimmten Themen suchen
+Die extrahierten Linkdaten werden zusätzlich mit Metadaten aus dem OPAC angereichert, mit denen Bibliothekar:innen
+Nach der Indexierung der Linkkontexte können Bibliothekar:innen gezielt nach Links auf Webinhalte zu bestimmten Themen suchen
 oder explorativ die Links durchstöbern, die von einer Website zu einem bestimmten Thema ausgehen.
 Zur Auswertung der Linkkontexte wurden zwei verschiedene Ansätze getestet: Die Volltextsuche mit
 [Apache Solr](https://lucene.apache.org/solr/) sowie die Textähnlichkeitssuche mit
-[Sentence-BERT](https://github.com/UKPLab/sentence-transformers/).
+[Sentence-BERT](https://github.com/UKPLab/sentence-transformers/) und [vespa](https://vespa.ai/).
 
 ## Extraktion des Linkkontexts aus Webarchiven
 Die Linkinformationen werden mithilfe des [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut/tree/aut-0.80.0)
@@ -19,9 +19,9 @@ als JSON-Elemente mit den Feldern `src_host` (Host, von dem der Link ausgeht), `
 `context` (Linkkontexte) `inv_path_depth` (inverse Pfadtiefe) enthält.
 
 ## Anreicherung mit Metadaten aus dem OPAC
-Die archivierten Websites, aus denen die Links stammen, wurden bereits von Bibliothekar*innen mit thematischen Schlagworten versehen.
+Die archivierten Websites, aus denen die Links stammen, wurden bereits von Bibliothekar:innen mit thematischen Schlagworten versehen.
 Diese Schlagworte können aus dem Bibliothekskatalog über die MarcXML Schnittstelle abgefragt und zu den Linkextrakten hinzugefügt werden (Feld `src_annotations`).
-Auf diese Weise können die Nutzer\*innen später die Links zusätzlich anhand der Schlagworte filtern.
+Auf diese Weise können die Nutzer:innen später die Links zusätzlich anhand der Schlagworte filtern.
 
 ## Volltextsuche mit Apache Solr
 Die Konfiguration des Solr Servers befindet sich im Ordner `solr/conf`. Es wird empfohlen, das deutsche Wörterbuch für die Zerlegung zusammengesetzter Wörter
@@ -87,4 +87,3 @@ Als Interface für die Textähnlichkeitssuche mit dem neu angelegten Index kann 
 
 # Lizenz
 Der Quellcode in diesem Projekt ist unter der [MIT-Lizenz](https://github.com/github/choosealicense.com/blob/gh-pages/LICENSE.md) lizenziert.
-Das bereitgestellte Beispieldatenset ist urheberrechtlich geschützt, siehe [In Copyright](http://rightsstatements.org/vocab/InC/1.0/).
