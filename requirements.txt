@@ -1,4 +1,4 @@
-requests==2.25.1
+requests==2.31.0
 jupyter==1.0.0
 pysolr==3.9.0
 click==8.0.1
